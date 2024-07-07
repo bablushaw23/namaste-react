@@ -67,3 +67,37 @@ const final=()=>{
 root.render(<final/>)
 ```
 
+### React Props
+We want to use react-components to create more than 1 result with different inputs. Same like we want to use same function different time with different arguments.
+**Arguments for react components are called `props`.**
+Example:
+```js
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestraurantCard
+          resName="Dominos"
+          cuisine="Pizza, Burger"
+          rating="4.5 Stars"
+        />
+        <RestraurantCard
+          resName="Haldiram"
+          cuisine="Sweets, Indian, Dessarts"
+          rating="4.7 stars"
+        />
+      </div>
+    </div>
+  );
+
+const RestraurantCard = (props) => {
+  console.log(props);
+  return (
+    <div >
+	    <h3>{props.resName}</h3>
+	</div>
+	)}
+```
+#### Some Points:
+1. when you pass arguments like `resName`, `cuisine`, these are merged into 1 object (in example it is props). That object will contains data in key-value form

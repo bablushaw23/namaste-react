@@ -35,7 +35,8 @@ const styleCard = {
   backgroundColor: "#f0f0f0",
 };
 
-const RestraurantCard = () => {
+const RestraurantCard = (props) => {
+  console.log(props);
   return (
     <div className="res-card" style={styleCard}>
       <img
@@ -43,8 +44,8 @@ const RestraurantCard = () => {
         className="res-logo"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"
       />
-      <h3>Pizzaria</h3>
-      <h4>Hand-roast pizzas, Chinese</h4>
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine}</h4>
       <h4>4.3 Stars</h4>
       <h4>38 Mins</h4>
     </div>
@@ -56,21 +57,16 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
-        <RestraurantCard />
+        <RestraurantCard
+          resName="Dominos"
+          cuisine="Pizza, Burger"
+          rating="4.5 Stars"
+        />
+        <RestraurantCard
+          resName="Haldiram"
+          cuisine="Sweets, Indian, Dessarts"
+          rating="4.7 stars"
+        />
       </div>
     </div>
   );
