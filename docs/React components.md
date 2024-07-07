@@ -105,4 +105,8 @@ const RestraurantCard = (props) => {
 3. But again, dont use loop index as a key for component bcz index can change for a particular element every time you run the code. Moreover, lets say a new item added in between than index will be changed but you already set it as a key to some element. This will bring issue into React to the same issue and re-render all items. Use index as key as last option
 4. You want to keep every major Component into separate folder and then `export` the component and import from another to use. Ex: `export default MyComponent`
 5. Best practice, dont keep raw data into Component file.
-6. 2 ways to export: 1. default export 2. named export. Import way changes in both ways
+6. 2 ways to export: 1. default export 2. named export. Import way changes in both ways. Check in commit "export-import"
+7. You can export both ways in same file. Example to import:
+```javascript
+import HeaderComponent, { LOGO_URL } from "./exportExample";
+```

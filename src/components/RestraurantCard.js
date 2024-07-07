@@ -4,7 +4,7 @@ const styleCard = {
 
 const RestraurantCard = (props) => {
   console.log(props);
-  const { resName, cuisine } = props;
+  const { resName, cuisine, rating } = props.resData;
   return (
     <div className="res-card" style={styleCard}>
       <img
@@ -14,7 +14,7 @@ const RestraurantCard = (props) => {
       />
       <h3>{resName}</h3>
       <h4>{cuisine}</h4>
-      <h4>4.3 Stars</h4>
+      <h4>{rating} stars</h4>
       <h4>38 Mins</h4>
     </div>
   );

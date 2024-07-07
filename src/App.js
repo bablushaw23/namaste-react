@@ -14,14 +14,16 @@ const AppLayout = () => {
 
 const restData = [
   {
+    key: 1,
     resName: "Dominos",
     cuisine: "Pizza, Burger",
-    rating: "4.5 Stars",
+    rating: 3.5,
   },
   {
+    key: 2,
     resName: "Haldiram",
     cuisine: "Sweets, Indian, Desserts",
-    rating: "4.7 stars",
+    rating: 4.7,
   },
 ];
 
