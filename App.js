@@ -30,7 +30,11 @@ const styleCard ={
 const RestraurantCard=()=>{
     return(
         <div className="res-card" style={styleCard}>
-            <h3>Rest-name</h3>
+        <img alt-src="res-logo" className="res-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"/>
+            <h3>Pizzaria</h3>
+            <h4>Hand-roast pizzas, Chinese</h4>
+            <h4>4.3 Stars</h4>
+            <h4>38 Mins</h4>
         </div>
     )
 }
