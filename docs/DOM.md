@@ -6,6 +6,7 @@ The Virtual DOM and ReactDOM are key concepts in React, but they serve different
    - By comparing the previous Virtual DOM with the updated Virtual DOM, React determines the most efficient way to update the actual DOM, minimizing unnecessary re-renders and improving performance.
    - The Virtual DOM allows React to batch updates and perform efficient DOM manipulations, resulting in faster rendering and a better user experience.
 
+
 2. **ReactDOM**:
    - ReactDOM is the package that provides the glue between React and the actual DOM.
    - It contains methods for rendering React components into the actual DOM, updating the DOM in response to changes in the Virtual DOM, and handling events.

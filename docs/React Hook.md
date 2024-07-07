@@ -56,3 +56,8 @@ const Body = (props) => {
 export default Body;
 
 ```
+## How React does this:
+### Reconciliation Algorithm
+#### React Fiber is the new algo to do Reconciliation
+It is updated algo used by React since React 16. It has efficient diff-checker between objects and efficient DOM manipulation technique
+
