@@ -101,3 +101,5 @@ const RestraurantCard = (props) => {
 ```
 #### Some Points:
 1. when you pass arguments like `resName`, `cuisine`, these are merged into 1 object (in example it is props). That object will contains data in key-value form
+2. While adding components through a loop or map,  To uniquely identify every component we should pass a key as prop like `<RestraurantCard key="123" resName="Haldiram"/>`. It helps React to identify which item has changed, added or removed so it can work to re-render only that part. But if key is not provided then React will have to re-render all available items again which is a less-optimized way.
+3. But again, dont use loop index as a key for component bcz index can change for a particular element every time you run the code. Moreover, lets say a new item added in between than index will be changed but you already set it as a key to some element. This will bring issue into React to the same issue and re-render all items. Use index as key as last option

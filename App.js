@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 const Header = () => {
   return (
@@ -37,6 +37,7 @@ const styleCard = {
 
 const RestraurantCard = (props) => {
   console.log(props);
+  const { resName, cuisine } = props;
   return (
     <div className="res-card" style={styleCard}>
       <img
@@ -44,29 +45,35 @@ const RestraurantCard = (props) => {
         className="res-logo"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"
       />
-      <h3>{props.resName}</h3>
-      <h4>{props.cuisine}</h4>
+      <h3>{resName}</h3>
+      <h4>{cuisine}</h4>
       <h4>4.3 Stars</h4>
       <h4>38 Mins</h4>
     </div>
   );
 };
 
+const restData = [
+  {
+    resName: "Dominos",
+    cuisine: "Pizza, Burger",
+    rating: "4.5 Stars",
+  },
+  {
+    resName: "Haldiram",
+    cuisine: "Sweets, Indian, Desserts",
+    rating: "4.7 stars",
+  },
+];
+
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestraurantCard
-          resName="Dominos"
-          cuisine="Pizza, Burger"
-          rating="4.5 Stars"
-        />
-        <RestraurantCard
-          resName="Haldiram"
-          cuisine="Sweets, Indian, Dessarts"
-          rating="4.7 stars"
-        />
+        {restData.map((restaurant) => (
+          <RestraurantCard {...restaurant} />
+        ))}
       </div>
     </div>
   );

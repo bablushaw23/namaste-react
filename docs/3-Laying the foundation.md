@@ -62,3 +62,5 @@ const headline=(<h1 className="head">
 			   </h1>
 			   );
 ```
+### Config-driven UI
+Controlling the UI using config data that comes from backend like, color code, font size etc will be provided by backend API. Requirement maybe like, In IPL to support a particular city you draw the homepage with its team flag etc
