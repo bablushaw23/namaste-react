@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7f765545d936f674",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "React components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3-Laying the foundation.md",
+                "file": "React components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3-Laying the foundation.md",
+                "file": "React components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3-Laying the foundation.md"
+                "file": "React components.md"
               }
             }
           }
@@ -183,10 +195,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "24a0993d93b1723a",
+  "active": "7f765545d936f674",
   "lastOpenFiles": [
-    "Episode 2 Igniting App.md",
     "3-Laying the foundation.md",
+    "React components.md",
+    "Episode 2 Igniting App.md",
     "Points.md",
     "DOM.md",
     "2024-06-25.md"

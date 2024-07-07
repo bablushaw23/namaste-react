@@ -43,3 +43,22 @@ JSX end goal to interpret into React.createElement object.
 Note that:
 * JSX is not part of react
 * JSX is not HTML or xml, but attempted to look alike it so to be developer friendly
+* JSX is not HTML, so there are some changes, like HTML's class is `className` here
+
+But JSX is not a JS syntax, and if you simply run it then JS compiler will throw error. Then must be some transcriber which converting JSX into JS code. 
+It is done by:
+#### Babel
+Before compiling the project, parcel gives it to Babel so it can convert JSX to React.createElement.
+
+Not only this, Babel also can convert modern JS versioned language (like ES6) into older plane vanilla JS. This is sometime required to make sure it is supported in older browsers.
+
+### JSX (continues...)
+
+If you want to write JSX in single line then it is fine, but to write in multiple line you want to wrap it with braces().
+
+```js
+const headline=(<h1 className="head">
+			   Namaste React
+			   </h1>
+			   );
+```
