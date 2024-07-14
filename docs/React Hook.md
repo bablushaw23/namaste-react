@@ -61,3 +61,25 @@ export default Body;
 #### React Fiber is the new algo to do Reconciliation
 It is updated algo used by React since React 16. It has efficient diff-checker between objects and efficient DOM manipulation technique
 
+
+## 2. useEffect():
+This is called by React when 1st time rendering is completed. Best use when you want to render with loading screen and then with `useEffect()` you call the API behind the scena
+* Note, you want to use this method in a function which returns a component to render. Now, if the component needs to do network call, like to load some image etc. That's not react's concern but Html's so useEffect() will be called before loading image. To change the behavior you want to wait until the network call is done.
+```js
+import RestraurantCard from "./RestraurantCard";
+import { useState, useEffect } from "react";
+
+const Body = (props) => {
+  let { restData } = props;
+  const [restList, setRestList] = useState(restData);
+
+  useEffect(() =>{
+    console.log("Effect called last, after return, after render");
+  })
+
+  console.log("Will be called first");
+
+  return (
+    <div className="body"></div>
+```
+more example you can check in git commit: `useEffect()`

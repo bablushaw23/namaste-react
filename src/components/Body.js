@@ -1,11 +1,24 @@
 import RestraurantCard from "./RestraurantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = (props) => {
-  // when this component is rendered for the first time, the button was not clicked
-  // and so restList was not filtered and hence we see 2 cards.
   let { restData } = props;
   const [restList, setRestList] = useState(restData);
+
+  useEffect(() => {
+    console.log("Effect called");
+    fetchData();
+  });
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+  };
+
+  console.log("Will be called first");
 
   return (
     <div className="body">
