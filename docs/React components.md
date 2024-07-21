@@ -110,3 +110,34 @@ const RestraurantCard = (props) => {
 ```javascript
 import HeaderComponent, { LOGO_URL } from "./exportExample";
 ```
+8. Whenever some value inside a component changes, after updating the value **the whole component (as a function) re-renders** by calling the component function again. Note, a UI Screen is made up of multiple components. So it is advisable to keep Component size small so change will impact only required portion and will improve performance. Again, re-rendering a component does not means, earlier one gets vanished from UI and newer one is coming. React re-render the component, running complete component's code, if there is console.log, it will printed to prove it is rendering but it renders or updates its virtual DOM then at the end it compares with older one using its efficient **Fiber and efficient re-constitution algorithm** and only changed ones are updated in UI.
+9. When you call setState(), React schedules a state update but doesn't immediately update the state. Instead, it batches multiple state updates together and applies them in a single re-render for better performance.
+
+## Controlled component pattern
+In React, the **Controlled Component** pattern involves managing the component’s state through React’s state system. The component’s state is controlled and updated by React, and changes are reflected through props.
+On the other hand, the **Uncontrolled Component** pattern involves letting the DOM handle the component’s state. The component stores its state internally, and React does not manage it. Instead of controlling the state through React, the component relies on the DOM, and interactions are often handled through refs.
+This pattern allows for a more predictable and controlled flow of data in the application.
+
+In other words, you can change some component's (or tag's) value using DOM manipulation also but that way you are by-passing React and it does not knows about the update. So when you want to travel through Component or state you will find React has no clue of what value the component holds.
+
+For sake of example: below React component, input type's value will not be changed from asvc:
+```jsx
+  <input
+	type="text"
+	placeholder="Search"
+	className="search-box"
+	value={"asvc"}
+  />
+```
+To fix it, either remove value field and in that case you can free type. In this case you want to have some event over some other component which can read the final value. You will not get event over every character.
+If you want React to act over every character change, you need to have onChange event use.
+```jsx
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+```
+Notice, we are setting the state. Means with every char change the component will be re-render

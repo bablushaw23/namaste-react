@@ -3,7 +3,6 @@ const styleCard = {
 };
 
 const RestraurantCard = (props) => {
-  console.log(props);
   const { name, cuisines, avgRating, sla, cloudinaryImageId } =
     props.resData.info;
   return (

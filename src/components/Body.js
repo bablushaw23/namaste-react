@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = (props) => {
-  let { restData } = props;
+  // let { restData } = props;
   const [restList, setRestList] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [filteredRest, setFilteredRest] = useState([]);
 
   useEffect(() => {
-    console.log("Effect called");
     fetchData();
-  });
+  }, []);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -21,6 +22,12 @@ const Body = (props) => {
     setRestList(
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredRest(restList);
+    setFilteredRest(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    // if I try to update filterRest from restList as it was updated before, it wont work.
+    // This bcz, react doesnot update the state immediately but it does in batches for performance
   };
 
   // I dont want to render body before api response is ready. So till then I will show loading
@@ -30,8 +37,30 @@ const Body = (props) => {
 
   return (
     <div className="body">
-      <div className="search">Search</div>
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            className="search-btn"
+            onClick={() =>
+              setFilteredRest(
+                restList.filter((each) =>
+                  each.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase())
+                )
+              )
+            }
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -44,7 +73,7 @@ const Body = (props) => {
         </button>
       </div>
       <div className="res-container">
-        {restList.map((restaurant) => (
+        {filteredRest.map((restaurant) => (
           <RestraurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>

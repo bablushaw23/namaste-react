@@ -65,6 +65,20 @@ It is updated algo used by React since React 16. It has efficient diff-checker b
 ## 2. useEffect():
 This is called by React when 1st time rendering is completed. Best use when you want to render with loading screen and then with `useEffect()` you call the API behind the scena
 * Note, you want to use this method in a function which returns a component to render. Now, if the component needs to do network call, like to load some image etc. That's not react's concern but Html's so useEffect() will be called before loading image. To change the behavior you want to wait until the network call is done.
+useEffect(): has 2 arguments:
+1. The first argument is a callback function that represents the effect. This function will be executed after every render by default, and it can optionally return a cleanup function to clean up any side effects.
+
+2. The second argument is an optional dependency array. This array should include all values (props, state variables, or any other values) that the effect depends on. If any of these values change between renders, the effect will be re-executed.
+
+If the dependency array is empty ([]), the effect will run only once after the initial render and will not run again on subsequent renders, regardless of any state or prop changes.
+
+* Syntax:
+```js
+useEffect(()->{
+	console.log("Will be called after component renders")
+}, [])
+```
+* Note, 
 ```js
 import RestraurantCard from "./RestraurantCard";
 import { useState, useEffect } from "react";
@@ -75,7 +89,7 @@ const Body = (props) => {
 
   useEffect(() =>{
     console.log("Effect called last, after return, after render");
-  })
+  },[])
 
   console.log("Will be called first");
 

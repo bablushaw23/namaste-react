@@ -85,24 +85,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React Hook.md",
+                "file": "React components.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "abf7aabc54fec409",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.7"
-              }
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -168,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "React Hook.md",
+                "file": "React components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -185,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "React Hook.md",
+                "file": "React components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -208,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "React Hook.md"
+                "file": "React components.md"
               }
             }
           }
@@ -229,11 +219,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "abf7aabc54fec409",
+  "active": "28731dfd723da5e3",
   "lastOpenFiles": [
-    "DOM.md",
     "React Hook.md",
     "React components.md",
+    "DOM.md",
     "Styling tips.md",
     "3-Laying the foundation.md",
     "Episode 2 Igniting App.md",
