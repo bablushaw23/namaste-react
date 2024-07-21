@@ -90,9 +90,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "abf7aabc54fec409",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -219,7 +229,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "28731dfd723da5e3",
+  "active": "abf7aabc54fec409",
   "lastOpenFiles": [
     "DOM.md",
     "React Hook.md",

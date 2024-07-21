@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const Body = (props) => {
   let { restData } = props;
-  const [restList, setRestList] = useState(restData);
+  const [restList, setRestList] = useState([]);
 
   useEffect(() => {
     console.log("Effect called");
@@ -15,10 +15,17 @@ const Body = (props) => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+
+    // ? for optional chaining to make null safe
+    setRestList(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
-  console.log("Will be called first");
+  // I dont want to render body before api response is ready. So till then I will show loading
+  if (restList.length === 0) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div className="body">
@@ -27,7 +34,7 @@ const Body = (props) => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filtered = restData.filter((each) => each.rating > 4);
+            const filtered = restList.filter((each) => each.info.avgRating > 4);
             // Here, when restList is updated, the whole Body component is re-rendered with filtered value only.
             setRestList(filtered);
           }}
@@ -37,7 +44,7 @@ const Body = (props) => {
       </div>
       <div className="res-container">
         {restList.map((restaurant) => (
-          <RestraurantCard key={restaurant.key} resData={restaurant} />
+          <RestraurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>

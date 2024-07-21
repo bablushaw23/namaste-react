@@ -4,18 +4,22 @@ const styleCard = {
 
 const RestraurantCard = (props) => {
   console.log(props);
-  const { resName, cuisine, rating } = props.resData;
+  const { name, cuisines, avgRating, sla, cloudinaryImageId } =
+    props.resData.info;
   return (
     <div className="res-card" style={styleCard}>
       <img
         alt-src="res-logo"
         className="res-logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
       />
-      <h3>{resName}</h3>
-      <h4>{cuisine}</h4>
-      <h4>{rating} stars</h4>
-      <h4>38 Mins</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines[0]}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{sla.slaString}</h4>
     </div>
   );
 };
