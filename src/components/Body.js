@@ -1,5 +1,6 @@
 import RestraurantCard from "./RestraurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = (props) => {
   let { restData } = props;
@@ -24,7 +25,7 @@ const Body = (props) => {
 
   // I dont want to render body before api response is ready. So till then I will show loading
   if (restList.length === 0) {
-    return <h1>Loading...</h1>;
+    return <Shimmer />;
   }
 
   return (

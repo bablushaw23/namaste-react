@@ -45,3 +45,16 @@
     width:97%;
     padding: 5px;
 }
+
+/* generate css for shimmer cards */
+
+.shimmer-container{
+    display: flex;
+}
+
+.shimmer-card{
+    margin: 20px;
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+}
