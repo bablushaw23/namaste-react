@@ -72,6 +72,8 @@ useEffect(): has 2 arguments:
 
 If the dependency array is empty ([]), the effect will run only once after the initial render and will not run again on subsequent renders, regardless of any state or prop changes.
 
+If array itself not provided then for every render it will be executed. Now, consider a common case where in useEffect you're calling a function component to render and again, the component load will trigger useEffect again. **This is Recursion** Careful of this trap
+
 * Syntax:
 ```js
 useEffect(()->{
@@ -96,4 +98,10 @@ const Body = (props) => {
   return (
     <div className="body"></div>
 ```
+
 more example you can check in git commit: `useEffect()`
+
+
+### What not to do
+1. Never declare a state variable (useState) outside of a functional component. Otherwise you will get TypeError. It is meant to create as local variable inside a function. Adviced to declare all useState at the beginning at function.
+2. Dont declare useState inside if-else or any loop. This makes the code inconsistent and we dont know how it behaves

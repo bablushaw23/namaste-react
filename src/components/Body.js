@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = (props) => {
-  // let { restData } = props;
   const [restList, setRestList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRest, setFilteredRest] = useState([]);
