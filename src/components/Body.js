@@ -17,16 +17,12 @@ const Body = (props) => {
     );
     const json = await data.json();
 
+    const restaurants =
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     // ? for optional chaining to make null safe
-    setRestList(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRest(restList);
-    setFilteredRest(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    // if I try to update filterRest from restList as it was updated before, it wont work.
-    // This bcz, react doesnot update the state immediately but it does in batches for performance
+    setRestList(restaurants);
+    // react doesnot update the state immediately but it does in batches for performance
+    setFilteredRest(restaurants);
   };
 
   // I dont want to render body before api response is ready. So till then I will show loading
@@ -63,9 +59,11 @@ const Body = (props) => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filtered = restList.filter((each) => each.info.avgRating > 4);
+            const filtered = filteredRest.filter(
+              (each) => each.info.avgRating > 4
+            );
             // Here, when restList is updated, the whole Body component is re-rendered with filtered value only.
-            setRestList(filtered);
+            setFilteredRest(filtered);
           }}
         >
           Top rated restaurant
