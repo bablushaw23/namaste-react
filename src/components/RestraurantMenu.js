@@ -1,22 +1,12 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { RESTRAURANT_DETAILS_URL } from "../../utils/constant";
 import { useParams } from "react-router-dom";
+import useRestraurantMenu from "../../utils/useRestraurantMenu";
 
 const RestraurantMenu = () => {
-  const [restInfo, setRestInfo] = useState(null);
   const { resId } = useParams();
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const apiUrl = RESTRAURANT_DETAILS_URL + resId;
-    const json = await fetch(apiUrl);
-    const data = await json.json();
-    setRestInfo(data);
-    console.log(data);
-  };
+  debugger;
+  const restInfo = useRestraurantMenu(resId);
 
   if (restInfo === null) {
     return <Shimmer />;
@@ -29,7 +19,7 @@ const RestraurantMenu = () => {
     restInfo?.data?.cards[2]?.card?.card?.info;
 
   const nameAndPriceCard =
-    restInfo?.data?.cards[4]?.groupedCard.cardGroupMap.REGULAR.cards[4]?.card
+    restInfo?.data?.cards[4]?.groupedCard.cardGroupMap.REGULAR.cards[2]?.card
       ?.card?.itemCards;
 
   return (
