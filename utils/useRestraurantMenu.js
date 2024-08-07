@@ -3,6 +3,7 @@ import { RESTRAURANT_DETAILS_URL } from "./constant";
 const useRestraurantMenu = (resId) => {
   const [restInfo, setRestInfo] = useState(null);
   useEffect(() => {
+    console.log("Executed useRestraurantMenu...");
     fetchData();
   }, []);
 
@@ -11,7 +12,6 @@ const useRestraurantMenu = (resId) => {
     const json = await fetch(apiUrl);
     const data = await json.json();
     setRestInfo(data);
-    console.log(data);
   };
 
   return restInfo;

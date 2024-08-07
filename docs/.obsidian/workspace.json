@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "977fba89666fa824",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "8. Custom Hooks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "7. Router.md",
+                "file": "8. Custom Hooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "7. Router.md",
+                "file": "8. Custom Hooks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "7. Router.md"
+                "file": "8. Custom Hooks.md"
               }
             }
           }
@@ -146,13 +159,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2007751a075b4a8d",
+  "active": "977fba89666fa824",
   "lastOpenFiles": [
+    "7. Router.md",
+    "8. Custom Hooks.md",
     "React Hook.md",
     "Styling tips.md",
     "DOM.md",
     "Points.md",
-    "7. Router.md",
     "2. Igniting App.md",
     "React components.md",
     "3-Laying the foundation.md",

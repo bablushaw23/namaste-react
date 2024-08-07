@@ -5,7 +5,6 @@ import useRestraurantMenu from "../../utils/useRestraurantMenu";
 
 const RestraurantMenu = () => {
   const { resId } = useParams();
-  debugger;
   const restInfo = useRestraurantMenu(resId);
 
   if (restInfo === null) {

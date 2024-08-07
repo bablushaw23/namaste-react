@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { GET_RESTRAURANT_LIST } from "../../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = (props) => {
   const [restList, setRestList] = useState([]);
@@ -24,6 +25,12 @@ const Body = (props) => {
     // react doesnot update the state immediately but it does in batches for performance
     setFilteredRest(restaurants);
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus) {
+    console.log("is offline now");
+    return <h1>Looks like you're offline. Check your connection.</h1>;
+  }
 
   // I dont want to render body before api response is ready. So till then I will show loading
   if (restList.length === 0) {
