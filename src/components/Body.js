@@ -39,17 +39,17 @@ const Body = (props) => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
             placeholder="Search"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="search-btn"
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() =>
               setFilteredRest(
                 restList.filter((each) =>
@@ -63,20 +63,22 @@ const Body = (props) => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filtered = filteredRest.filter(
-              (each) => each.info.avgRating > 4
-            );
-            // Here, when restList is updated, the whole Body component is re-rendered with filtered value only.
-            setFilteredRest(filtered);
-          }}
-        >
-          Top rated restaurant
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              const filtered = filteredRest.filter(
+                (each) => each.info.avgRating > 4
+              );
+              // Here, when restList is updated, the whole Body component is re-rendered with filtered value only.
+              setFilteredRest(filtered);
+            }}
+          >
+            Top rated restaurant
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRest.map((restaurant) => (
           <Link
             to={"/restraurant/" + restaurant.info.id}

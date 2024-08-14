@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1bccf52eb44bdd02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Styling tips.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "10. CSS.md",
+                "file": "Styling tips.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "10. CSS.md",
+                "file": "Styling tips.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10. CSS.md"
+                "file": "Styling tips.md"
               }
             }
           }
@@ -183,18 +195,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3233a38140d4860f",
+  "active": "1bccf52eb44bdd02",
   "lastOpenFiles": [
-    "9. Optimize app.md",
-    "10. CSS.md",
-    "8. Custom Hooks.md",
-    "7. Router.md",
     "React Hook.md",
-    "Styling tips.md",
-    "DOM.md",
+    "React components.md",
     "Points.md",
     "2. Igniting App.md",
-    "React components.md",
+    "DOM.md",
+    "11. Data.md",
+    "10. CSS.md",
+    "9. Optimize app.md",
+    "8. Custom Hooks.md",
+    "7. Router.md",
+    "Styling tips.md",
     "3-Laying the foundation.md",
     "2024-06-25.md"
   ]
